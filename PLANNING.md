@@ -1,4 +1,4 @@
-# project-2 - Disc Golf Reviews
+# project-2 - THE disc golf review
 
 ## Wireframe
 
@@ -30,11 +30,25 @@
 - Once on the stats and review page and if signed in, I want to be able to add a rating and comment for that particular disc.
 - Be able to click "home." and go back to the sign-up/sign-in "screen"
 
-### Version 2
+---
 
--
+## Version 2
 
-### Version 3
+### As a user, I want to:
+
+- Have the ability to add links to sites where I can purchase the disc.
+- Have the ability to add a picture of the disc
+- Be able to delete and update comments
+- See which user left the comment
+
+---
+
+## Version 3
+
+### As a user, I want to:
+
+- Be able to add a professional as a collection with a one to many relationship with different discs
+- Be able to filter the discs by type (putter and approach, midrange, fairway driver, distance driver)
 
 ---
 
