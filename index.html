@@ -27,76 +27,93 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="main-nav"><div>welcome to THE disc golf review.</div></nav>
+    <nav class="main-nav">
+      <div>welcome to THE disc golf review.</div>
+      <div>
+        <div id="message-container"></div>
+      </div>
+    </nav>
+
+    <nav class="secondary-nav hide">
+      <div>THE disc golf review.</div>
+      <div class="navigation">
+        <div class="nav-button home">home.</div>
+        <div class="nav-button disc-list">disc list.</div>
+        <div class="nav-button add-disc">add disc.</div>
+      </div>
+    </nav>
 
     <main>
       <!-- Container for sign-up and sign-in form -->
-      <div id="auth-container" class="container">
-        <div class="row">
-          <div class="col">
-            <h2>New User? Sign Up</h2>
-            <form id="sign-up-form-container">
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Email address</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                  name="email"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword" class="col-sm-2 col-form-label"
-                  >Password</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword"
-                  name="password"
-                />
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+      <div class="auth-container">
+        <form id="sign-up-form-container">
+          <h2>New Golfer? Sign Up</h2>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+              name="email"
+            />
           </div>
-          <div class="col">
-            <h2>Returning User? Sign In</h2>
-            <form id="sign-in-form-container">
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Email address</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="name@example.com"
-                  name="email"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword" class="col-sm-2 col-form-label"
-                  >Password</label
-                >
-                <input type="password" class="form-control" name="password" />
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+          <div class="mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword"
+              name="password"
+            />
           </div>
-        </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <form id="sign-in-form-container">
+          <h2>Returning Golfer? Sign In</h2>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              placeholder="name@example.com"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label"
+              >Password</label
+            >
+            <input type="password" class="form-control" name="password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
 
       <div id="index-container" class="hide">
-        <h2>Characters</h2>
-        <div id="index-character-container" class="content-container"></div>
-        <h2>Campaigns</h2>
-        <div id="index-campaign-container" class="content-container"></div>
+        <h2>discs.</h2>
+        <div id="index-disc-container" class="content-container"></div>
       </div>
+      <div class="hide container" id="show-disc-container"></div>
 
-      <div class="hide container" id="show-character-container"></div>
-      <div class="hide container" id="show-campaign-container"></div>
+      <form class="create-disc-form hide">
+        <input type="text" name="name" placeholder="name" />
+        <input type="text" name="manufacturer" placeholder="manufacturer" />
+        <input type="text" name="plastic" placeholder="plastic" />
+        <input type="text" name="type" placeholder="type" />
+        <input type="Number" name="speed" placeholder="speed" />
+        <input type="Number" name="glide" placeholder="glide" />
+        <input type="Number" name="turn" placeholder="turn" />
+        <input type="Number" name="fade" placeholder="fade" />
+        <input type="submit" value="create disc." />
+      </form>
     </main>
   </body>
 </html>

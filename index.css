@@ -29,6 +29,24 @@ main {
   font-size: 24px;
 }
 
+.secondary-nav {
+  background-color: var(--main-green);
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 24px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .hide {
   display: none;
 }
@@ -44,4 +62,26 @@ main {
   align-items: center;
   flex-basis: 33%;
   flex-direction: column;
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 75vh;
+}
+
+.auth-container > * {
+  margin: 50px;
+}
+
+.row {
+  min-width: 100vh;
+}
+
+#index-container {
+}
+
+.nav-button {
+  cursor: pointer;
 }
