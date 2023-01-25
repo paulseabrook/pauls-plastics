@@ -56,3 +56,5 @@
 ## Entity Relationship Diagram
 
 ![ERD](./assets/erd.png)
+
+---
