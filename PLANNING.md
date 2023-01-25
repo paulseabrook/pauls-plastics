@@ -25,10 +25,10 @@
 - Be able to click "disc list" to see the list of discs.
 - Be able to click on a disc's "info".
 - Once the info is clicked for a particular disc, be able to see the stats on that disc and different comments and ratings for that disc.
-- Be able to delete a disc
-- Be able to update a disc
+- Be able to delete a disc.
+- Be able to update a disc.
 - Once on the stats and review page and if signed in, I want to be able to add a rating and comment for that particular disc.
-- Be able to click "home." and go back to the sign-up/sign-in "screen"
+- Be able to click "home." and go back to the sign-up/sign-in "screen".
 
 ---
 
@@ -37,9 +37,10 @@
 ### As a user, I want to:
 
 - Have the ability to add links to sites where I can purchase the disc.
-- Have the ability to add a picture of the disc
-- Be able to delete and update comments
-- See which user left the comment
+- Have the ability to add a picture of the disc.
+- Be able to delete and update "reviews".
+- See which user left the "review".
+- See an "About" section.
 
 ---
 
@@ -47,8 +48,8 @@
 
 ### As a user, I want to:
 
-- Be able to add a professional as a collection with a one to many relationship with different discs
-- Be able to filter the discs by type (putter and approach, midrange, fairway driver, distance driver)
+- Be able to add a professional disc golfer as a collection with a one to many relationship with different discs.
+- Be able to filter the discs by type (putter and approach, midrange, fairway driver, distance driver).
 
 ---
 
