@@ -1,0 +1,47 @@
+:root {
+  --main-green: #476545;
+  --main-blue: #3e657b;
+  --main-tan: #a99970;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--main-tan);
+}
+
+main {
+  margin: 5px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-nav {
+  background-color: var(--main-green);
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 24px;
+}
+
+.hide {
+  display: none;
+}
+
+.content-container {
+  display: flex;
+  height: 250px;
+}
+
+.content-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 33%;
+  flex-direction: column;
+}
