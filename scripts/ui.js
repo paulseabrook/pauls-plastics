@@ -2,7 +2,7 @@ import { store } from './store.js';
 
 import { indexDisc } from './api.js';
 
-const messageContainer = document.querySelector('#message-container');
+const messageContainer = document.querySelector('.message-container');
 //const authContainer = document.querySelector('.auth-container');
 const showDiscContainer = document.querySelector('#show-disc-container');
 const indexContainer = document.querySelector('#index-container');
@@ -20,6 +20,8 @@ export const onIndexDiscSuccess = (discs) => {
   while (indexDiscsContainer.firstChild) {
     indexDiscsContainer.removeChild(indexDiscsContainer.lastChild);
   }
+  messageContainer.innerHTML = '<h3>discs.</h3>';
+  messageContainer.classList.remove('hide');
   discs.forEach((disc) => {
     const div = document.createElement('div');
     div.classList.add('content-card');
@@ -101,6 +103,9 @@ export const onShowDiscSuccess = (disc) => {
   console.log(createDiv);
   showDiscContainer.appendChild(div);
   showDiscContainer.appendChild(reviewDiv);
+  while (reviewDiscForm.firstChild) {
+    reviewDiscForm.removeChild(reviewDiscForm.lastChild);
+  }
   reviewDiscForm.appendChild(createDiv);
 };
 
@@ -117,6 +122,18 @@ export const onUpdateDiscSuccess = () => {
 
 export const onDeleteDiscSuccess = () => {
   messageContainer.innerHTML = 'You have deleted a disc';
+  setTimeout(() => {
+    indexDisc()
+      .then((res) => res.json())
+      .then((res) => onIndexDiscSuccess(res.discs))
+      .then(discListFunc())
+      .catch(onFailure);
+  }, 2000);
+};
+
+export const onCreateReviewSuccess = () => {
+  messageContainer.innerHTML = 'You have left a review';
+  reviewDiscForm.classList.add('hide');
   setTimeout(() => {
     indexDisc()
       .then((res) => res.json())
@@ -158,6 +175,7 @@ export const addDiscFunc = () => {
 };
 
 export const discListFunc = () => {
+  reviewDiscForm.classList.add('hide');
   messageContainer.innerHTML = '';
   signUpContainer.classList.add('hide');
   signInContainer.classList.add('hide');

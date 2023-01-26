@@ -17,6 +17,7 @@ import {
   onShowDiscSuccess,
   onUpdateDiscSuccess,
   onDeleteDiscSuccess,
+  onCreateReviewSuccess,
   onFailure,
   homeFunc,
   addDiscFunc,
@@ -153,6 +154,16 @@ discList.addEventListener('click', () => {
 // Review Actions
 
 reviewDiscForm.addEventListener('submit', (event) => {
+  event.preventDefault();
   const id = event.target.getAttribute('data-id');
-  console.log(id);
+
+  if (!id) return;
+  const reviewData = {
+    review: {
+      comment: event.target['comment'].value,
+      rating: event.target['rating'].value,
+      discId: id,
+    },
+  };
+  createReview(reviewData).then(onCreateReviewSuccess).catch(onFailure);
 });

@@ -47,10 +47,6 @@ main {
   justify-content: space-around;
 }
 
-.hide {
-  display: none;
-}
-
 .content-container {
   display: flex;
   height: 250px;
@@ -79,9 +75,38 @@ main {
   min-width: 100vh;
 }
 
-#index-container {
-}
-
 .nav-button {
   cursor: pointer;
+}
+
+.button1-design {
+  background-color: var(--main-blue);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button1-design:hover {
+  background-color: #304c5d;
+}
+
+.message-container {
+  background-color: var(--main-blue);
+  font-family: 'Josefin Sans', sans-serif;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hide {
+  display: none;
 }
