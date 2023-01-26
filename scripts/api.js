@@ -40,6 +40,18 @@ export const showDisc = (id) => {
   });
 };
 
+export const createReview = (data) => {
+  return fetch(`http://localhost:8000/reviews`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${store.userToken}`,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
 export const createDisc = (data) => {
   return fetch(`http://localhost:8000/discs`, {
     method: 'POST',

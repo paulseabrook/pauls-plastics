@@ -6,6 +6,7 @@ import {
   showDisc,
   updateDisc,
   deleteDisc,
+  createReview,
 } from './api.js';
 
 import {
@@ -28,9 +29,10 @@ const home = document.querySelector('.home');
 const discList = document.querySelector('.disc-list');
 const addDisc = document.querySelector('.add-disc');
 const createDiscForm = document.querySelector('.create-disc-form');
-const indexContainer = document.querySelector('#index-container');
+
 const indexDiscsContainer = document.querySelector('#index-disc-container');
 const showDiscContainer = document.querySelector('#show-disc-container');
+const reviewDiscForm = document.querySelector('.review-disc-form');
 
 // User Actions
 
@@ -95,6 +97,19 @@ createDiscForm.addEventListener('submit', (event) => {
 });
 
 showDiscContainer.addEventListener('submit', (event) => {
+  const id = event.target;
+  console.log(id);
+  event.preventDefault();
+  const reviewData = {
+    review: {
+      comment: event.target['comment'].value,
+      rating: event.target['rating'].value,
+    },
+  };
+  createReview(reviewData).then(onShowDiscSuccess).catch(onFailure);
+});
+
+showDiscContainer.addEventListener('submit', (event) => {
   event.preventDefault();
   const id = event.target.getAttribute('data-id');
   const discData = {
@@ -133,4 +148,11 @@ discList.addEventListener('click', () => {
     .then((res) => onIndexDiscSuccess(res.discs))
     .then(discListFunc())
     .catch(onFailure);
+});
+
+// Review Actions
+
+reviewDiscForm.addEventListener('submit', (event) => {
+  const id = event.target.getAttribute('data-id');
+  console.log(id);
 });

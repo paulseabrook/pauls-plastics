@@ -13,6 +13,8 @@ const mainNav = document.querySelector('.main-nav');
 const secondaryNav = document.querySelector('.secondary-nav');
 const createDiscForm = document.querySelector('.create-disc-form');
 
+const reviewDiscForm = document.querySelector('.review-disc-form');
+
 // Disc Actions
 export const onIndexDiscSuccess = (discs) => {
   while (indexDiscsContainer.firstChild) {
@@ -41,12 +43,17 @@ export const onCreateDiscSuccess = () => {
 };
 
 export const onShowDiscSuccess = (disc) => {
+  let reviews = disc.reviews;
   while (showDiscContainer.firstChild) {
     showDiscContainer.removeChild(showDiscContainer.lastChild);
   }
+
   indexContainer.classList.add('hide');
   showDiscContainer.classList.remove('hide');
+  reviewDiscForm.classList.remove('hide');
   const div = document.createElement('div');
+  const reviewDiv = document.createElement('div');
+  const createDiv = document.createElement('div');
   div.innerHTML = `
             <div class="stats">
               <h2>Disc</h2>
@@ -73,7 +80,28 @@ export const onShowDiscSuccess = (disc) => {
               <button type="button" class="btn btn-danger" data-id="${disc._id}">Delete Disc</button>
             </div>
   `;
+  let html = '';
+  let html1 = '';
+  let i = 1;
+  reviews.forEach((review) => {
+    console.log(review);
+    html += `<h3>Review ${i}</h3>`;
+    html += `<div>${review.comment}</div>`;
+    html += `<div>${review.rating}</div>`;
+    i++;
+  });
+  html1 += `<form data-id="${disc._id}">
+            <input type="text" name="comment" placeholder="comment" />
+            <input type="text" name="rating" placeholder="rating" />
+            <input type="submit" value="create review." />
+          </form>`;
+
+  reviewDiv.innerHTML = html;
+  createDiv.innerHTML = html1;
+  console.log(createDiv);
   showDiscContainer.appendChild(div);
+  showDiscContainer.appendChild(reviewDiv);
+  reviewDiscForm.appendChild(createDiv);
 };
 
 export const onUpdateDiscSuccess = () => {
@@ -121,13 +149,6 @@ export const onFailure = (error) => {
 };
 
 export const homeFunc = () => {
-  // signUpContainer.classList.remove('hide');
-  // signInContainer.classList.remove('hide');
-  // indexContainer.classList.add('hide');
-  // mainNav.classList.remove('hide');
-  // secondaryNav.classList.add('hide');
-  // signInContainer.reset();
-  // signUpContainer.reset();
   location.reload();
 };
 
