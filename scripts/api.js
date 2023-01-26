@@ -51,3 +51,24 @@ export const createDisc = (data) => {
     body: JSON.stringify(data),
   });
 };
+
+export const updateDisc = (data, id) => {
+  return fetch(`http://localhost:8000/discs/${id}`, {
+    method: 'PATCH',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${store.userToken}`,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+export const deleteDisc = (id) => {
+  return fetch(`http://localhost:8000/discs/${id}`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${store.userToken}`,
+    },
+  });
+};
