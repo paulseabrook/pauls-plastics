@@ -34,6 +34,7 @@ export const onIndexDiscSuccess = (discs) => {
 };
 
 export const onCreateDiscSuccess = () => {
+  indexDiscsContainer.classList.add('hide');
   messageContainer.innerText = 'You have created a disc!';
   setTimeout(() => {
     indexDisc()
@@ -49,8 +50,7 @@ export const onShowDiscSuccess = (disc) => {
   while (showDiscContainer.firstChild) {
     showDiscContainer.removeChild(showDiscContainer.lastChild);
   }
-
-  indexContainer.classList.add('hide');
+  indexDiscsContainer.classList.add('hide');
   showDiscContainer.classList.remove('hide');
   reviewDiscForm.classList.remove('hide');
   const div = document.createElement('div');
@@ -153,7 +153,7 @@ export const onSignInSuccess = (userToken) => {
   store.userToken = userToken;
   signUpContainer.classList.add('hide');
   signInContainer.classList.add('hide');
-  indexContainer.classList.remove('hide');
+  indexDiscsContainer.classList.remove('hide');
   mainNav.classList.add('hide');
   secondaryNav.classList.remove('hide');
 };
@@ -170,8 +170,9 @@ export const homeFunc = () => {
 };
 
 export const addDiscFunc = () => {
+  messageContainer.innerHTML = '<h3>add disc.</h3>';
   createDiscForm.classList.remove('hide');
-  indexContainer.classList.add('hide');
+  indexDiscsContainer.classList.add('hide');
 };
 
 export const discListFunc = () => {
@@ -179,7 +180,7 @@ export const discListFunc = () => {
   messageContainer.innerHTML = '';
   signUpContainer.classList.add('hide');
   signInContainer.classList.add('hide');
-  indexContainer.classList.remove('hide');
+  indexDiscsContainer.classList.remove('hide');
   mainNav.classList.add('hide');
   secondaryNav.classList.remove('hide');
   createDiscForm.classList.add('hide');

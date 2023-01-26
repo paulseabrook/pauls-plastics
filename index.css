@@ -10,11 +10,10 @@
 
 body {
   background-color: var(--main-tan);
+  text-align: center;
 }
 
 main {
-  margin: 5px;
-  font-family: 'Josefin Sans', sans-serif;
 }
 
 .main-nav {
@@ -71,9 +70,9 @@ main {
   margin: 50px;
 }
 
-.row {
+/* .row {
   min-width: 100vh;
-}
+} */
 
 .nav-button {
   cursor: pointer;
@@ -107,6 +106,16 @@ main {
   color: white;
 }
 
+.create-disc-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  display: inline-block;
+}
+
+/*  hide at bottom  */
 .hide {
   display: none;
 }
