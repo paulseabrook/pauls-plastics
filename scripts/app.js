@@ -30,7 +30,6 @@ const home = document.querySelector('.home');
 const discList = document.querySelector('.disc-list');
 const addDisc = document.querySelector('.add-disc');
 const createDiscForm = document.querySelector('.create-disc-form');
-
 const indexDiscsContainer = document.querySelector('#index-disc-container');
 const showDiscContainer = document.querySelector('#show-disc-container');
 const reviewDiscForm = document.querySelector('.review-disc-form');
@@ -97,18 +96,18 @@ createDiscForm.addEventListener('submit', (event) => {
   createDisc(discData).then(onCreateDiscSuccess).catch(onFailure);
 });
 
-showDiscContainer.addEventListener('submit', (event) => {
-  const id = event.target;
-  console.log(id);
-  event.preventDefault();
-  const reviewData = {
-    review: {
-      comment: event.target['comment'].value,
-      rating: event.target['rating'].value,
-    },
-  };
-  createReview(reviewData).then(onShowDiscSuccess).catch(onFailure);
-});
+// showDiscContainer.addEventListener('submit', (event) => {
+//   const id = event.target;
+//   console.log(id);
+//   event.preventDefault();
+//   const reviewData = {
+//     review: {
+//       comment: event.target['comment'].value,
+//       rating: event.target['rating'].value,
+//     },
+//   };
+//   createReview(reviewData).then(onShowDiscSuccess).catch(onFailure);
+// });
 
 showDiscContainer.addEventListener('submit', (event) => {
   event.preventDefault();

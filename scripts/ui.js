@@ -27,7 +27,7 @@ export const onIndexDiscSuccess = (discs) => {
     div.classList.add('content-card');
     div.innerHTML = `
             <h3>${disc.name}</h3>
-            <button type="button" class="btn btn-primary" data-id="${disc._id}">Show Disc</button>
+            <button type="button" class="button1-design" data-id="${disc._id}">show disc.</button>
         `;
     indexDiscsContainer.appendChild(div);
   });
@@ -50,6 +50,7 @@ export const onShowDiscSuccess = (disc) => {
   while (showDiscContainer.firstChild) {
     showDiscContainer.removeChild(showDiscContainer.lastChild);
   }
+  messageContainer.classList.add('hide');
   indexDiscsContainer.classList.add('hide');
   showDiscContainer.classList.remove('hide');
   reviewDiscForm.classList.remove('hide');
@@ -57,30 +58,28 @@ export const onShowDiscSuccess = (disc) => {
   const reviewDiv = document.createElement('div');
   const createDiv = document.createElement('div');
   div.innerHTML = `
-            <div class="stats">
-              <h2>Disc</h2>
-              <h3>${disc.name}</h3>
-              <p>${disc.manufacturer}</p>
-              <p>${disc.plastic}</p>
-              <p>${disc.type}</p>
-              <p>${disc.speed}</p>
-              <p>${disc.glide}</p>
-              <p>${disc.turn}</p>
-              <p>${disc.fade}</p>
+  <h2>Disc</h2>
+  <h3>${disc.name}</h3>
+  <p>${disc.manufacturer}</p>
+  <p>${disc.plastic}</p>
+  <p>${disc.type}</p>
+  <p>${disc.speed}</p>
+  <p>${disc.glide}</p>
+  <p>${disc.turn}</p>
+  <p>${disc.fade}</p>
 
-              <form data-id="${disc._id}">
-                  <input class="form-control"class="form-control" type="text" name="firstName" value="${disc.name}">
-                  <input class="form-control" type="text" name="manufacturer" value="${disc.manufacturer}">
-                  <input class="form-control" type="text" name="plastic" value="${disc.plastic}">
-                  <input class="form-control" type="text" name="type" value="${disc.type}">
-                  <input class="form-control" type="number" name="speed" value="${disc.speed}">
-                  <input class="form-control" type="number" name="glide" value="${disc.glide}">
-                  <input class="form-control" type="number" name="turn" value="${disc.turn}">
-                  <input class="form-control" type="number" name="fade" value="${disc.fade}">
-                  <button type="submit" class="btn btn-warning">Update Disc</button>
-              </form>
-              <button type="button" class="btn btn-danger" data-id="${disc._id}">Delete Disc</button>
-            </div>
+  <form data-id="${disc._id}">
+      <input class="form-control"class="form-control" type="text" name="firstName" value="${disc.name}">
+      <input class="form-control" type="text" name="manufacturer" value="${disc.manufacturer}">
+      <input class="form-control" type="text" name="plastic" value="${disc.plastic}">
+      <input class="form-control" type="text" name="type" value="${disc.type}">
+      <input class="form-control" type="number" name="speed" value="${disc.speed}">
+      <input class="form-control" type="number" name="glide" value="${disc.glide}">
+      <input class="form-control" type="number" name="turn" value="${disc.turn}">
+      <input class="form-control" type="number" name="fade" value="${disc.fade}">
+      <button type="submit" class="button2-design">update disc.</button>
+  </form>
+  <button type="button" class="button3-design" data-id="${disc._id}">delete disc.</button>
   `;
   let html = '';
   let html1 = '';
@@ -170,6 +169,8 @@ export const homeFunc = () => {
 };
 
 export const addDiscFunc = () => {
+  reviewDiscForm.classList.add('hide');
+  showDiscContainer.classList.add('hide');
   messageContainer.innerHTML = '<h3>add disc.</h3>';
   createDiscForm.classList.remove('hide');
   indexDiscsContainer.classList.add('hide');

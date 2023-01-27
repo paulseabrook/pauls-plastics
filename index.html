@@ -42,77 +42,116 @@
     <div>
       <div class="message-container hide"></div>
     </div>
-    <main>
-      <!-- Container for sign-up and sign-in form -->
-      <div class="auth-container">
-        <form id="sign-up-form-container">
-          <h2>New Golfer? Sign Up</h2>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >email address.</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-              name="email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="inputPassword" class="col-sm-2 col-form-label"
-              >password.</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="inputPassword"
-              name="password"
-            />
-          </div>
-          <button type="submit" class="button1-design">sign in.</button>
-        </form>
-
-        <form id="sign-in-form-container">
-          <h2>Returning Golfer? Sign In</h2>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >email address.</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              placeholder="name@example.com"
-              name="email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="inputPassword" class="col-sm-2 col-form-label"
-              >password.</label
-            >
-            <input type="password" class="form-control" name="password" />
-          </div>
-          <button type="submit" class="button1-design">sign in.</button>
-        </form>
-      </div>
-
-      <div id="index-disc-container" class="content-container hide"></div>
-
-      <div class="hide container" id="show-disc-container"></div>
-
-      <form class="create-disc-form hide">
-        <input type="text" name="name" placeholder="name" />
-        <input type="text" name="manufacturer" placeholder="manufacturer" />
-        <input type="text" name="plastic" placeholder="plastic" />
-        <input type="text" name="type" placeholder="type" />
-        <input type="Number" name="speed" placeholder="speed" />
-        <input type="Number" name="glide" placeholder="glide" />
-        <input type="Number" name="turn" placeholder="turn" />
-        <input type="Number" name="fade" placeholder="fade" />
-        <input type="submit" value="create disc." />
+    <!-- Container for sign-up and sign-in form -->
+    <div class="auth-container">
+      <form id="sign-up-form-container">
+        <h2>New Golfer? Sign Up</h2>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >email address.</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >password.</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword"
+            name="password"
+          />
+        </div>
+        <button type="submit" class="button1-design">sign in.</button>
       </form>
 
-      <div class="review-disc-form hide"></div>
-    </main>
+      <form id="sign-in-form-container">
+        <h2>Returning Golfer? Sign In</h2>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >email address.</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            placeholder="name@example.com"
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >password.</label
+          >
+          <input type="password" class="form-control" name="password" />
+        </div>
+        <button type="submit" class="button1-design">sign in.</button>
+      </form>
+    </div>
+
+    <div id="index-disc-container" class="content-container hide"></div>
+
+    <div class="hide container" id="show-disc-container"></div>
+    <div class="flex-div">
+      <form class="create-disc-form hide">
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="name"
+        />
+        <input
+          type="text"
+          name="manufacturer"
+          class="form-control"
+          placeholder="manufacturer"
+        />
+        <input
+          type="text"
+          name="plastic"
+          class="form-control"
+          placeholder="plastic"
+        />
+        <input
+          type="text"
+          name="type"
+          class="form-control"
+          placeholder="type"
+        />
+        <input
+          type="Number"
+          name="speed"
+          class="form-control"
+          placeholder="speed"
+        />
+        <input
+          type="Number"
+          name="glide"
+          class="form-control"
+          placeholder="glide"
+        />
+        <input
+          type="Number"
+          name="turn"
+          class="form-control"
+          placeholder="turn"
+        />
+        <input
+          type="Number"
+          name="fade"
+          class="form-control"
+          placeholder="fade"
+        />
+        <input type="submit" class="button1-design" value="create disc." />
+      </form>
+    </div>
+
+    <div class="review-disc-form hide"></div>
   </body>
 </html>
