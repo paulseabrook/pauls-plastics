@@ -12,12 +12,17 @@
 body {
   background-color: var(--main-tan);
   font-family: 'Josefin Sans', sans-serif;
+  width: 100%;
 }
 
 main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#show-discs-container {
+  width: 100%;
 }
 
 .main-nav {
@@ -166,6 +171,47 @@ main {
 
 .create-disc-form > * {
   border-radius: 10px;
+}
+
+.stats-update-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.update {
+  margin-top: 3vh;
+  padding: 10px;
+}
+
+.stats {
+  padding: 10px;
+}
+
+.reviews {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: left;
+  flex-direction: column;
+  padding: 30px;
+  color: white;
+}
+
+.review-disc-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-review {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--main-green);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 /*  hide at bottom  */
