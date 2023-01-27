@@ -144,13 +144,6 @@ export const onDeleteDiscSuccess = () => {
 export const onCreateReviewSuccess = () => {
   messageContainer.innerHTML = 'You have left a review';
   reviewDiscForm.classList.add('hide');
-  setTimeout(() => {
-    indexDisc()
-      .then((res) => res.json())
-      .then((res) => onIndexDiscSuccess(res.discs))
-      .then(discListFunc())
-      .catch(onFailure);
-  }, 2000);
 };
 
 // User Actions
@@ -192,7 +185,7 @@ export const addDiscFunc = () => {
   messageContainer.classList.remove('hide');
   reviewDiscForm.classList.add('hide');
   showDiscContainer.classList.add('hide');
-  messageContainer.innerHTML = '<h3>add disc.</h3>';
+  messageContainer.innerHTML = '<h3>add disc below.</h3>';
   createDiscForm.classList.remove('hide');
   indexDiscsContainer.classList.add('hide');
 };

@@ -160,4 +160,12 @@ reviewDiscForm.addEventListener('submit', (event) => {
     },
   };
   createReview(reviewData).then(onCreateReviewSuccess).catch(onFailure);
+  setTimeout(() => {
+    showDisc(id)
+      .then((res) => res.json())
+      .then((res) => {
+        onShowDiscSuccess(res.disc);
+      })
+      .catch(onFailure);
+  }, 2000);
 });

@@ -62,5 +62,3 @@ THE disc golf review is an application that allows disc golfers to come together
 
 - Be able to add a professional disc golfer as a collection with a one to many relationship with different discs.
 - Utilize search functionality to filter out the list of discs based on some criteria.
-
----
