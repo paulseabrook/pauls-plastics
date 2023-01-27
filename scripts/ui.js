@@ -5,8 +5,7 @@ import { indexDisc } from './api.js';
 const messageContainer = document.querySelector('.message-container');
 //const authContainer = document.querySelector('.auth-container');
 const showDiscContainer = document.querySelector('#show-disc-container');
-const indexContainer = document.querySelector('#index-container');
-const indexDiscsContainer = document.querySelector('#index-disc-container');
+const indexDiscsContainer = document.querySelector('.index-disc-container');
 const signUpContainer = document.querySelector('#sign-up-form-container');
 const signInContainer = document.querySelector('#sign-in-form-container');
 const mainNav = document.querySelector('.main-nav');
@@ -27,7 +26,7 @@ export const onIndexDiscSuccess = (discs) => {
     div.classList.add('content-card');
     div.innerHTML = `
             <h3>${disc.name}</h3>
-            <button type="button" class="button1-design" data-id="${disc._id}">show disc.</button>
+            <button type="button" class="button1-design" data-id="${disc._id}">info.</button>
         `;
     indexDiscsContainer.appendChild(div);
   });
@@ -99,9 +98,10 @@ export const onShowDiscSuccess = (disc) => {
   let i = 1;
   reviews.forEach((review) => {
     console.log(review);
-    html += `<h3>Review ${i}</h3>`;
+    html += `<h3><u>Review ${i}</u></h3>`;
     html += `<div>${review.comment}</div>`;
-    html += `<div>${review.rating}</div>`;
+    html += `<div>rating: ${review.rating}/10</div>`;
+    html += `<div>----------------------------------------</div>`;
     i++;
   });
   html1 += `<form data-id="${disc._id}">
@@ -128,13 +128,6 @@ export const onShowDiscSuccess = (disc) => {
 
 export const onUpdateDiscSuccess = () => {
   messageContainer.innerHTML = 'You have updated a disc';
-  setTimeout(() => {
-    indexDisc()
-      .then((res) => res.json())
-      .then((res) => onIndexDiscSuccess(res.discs))
-      .then(discListFunc())
-      .catch(onFailure);
-  }, 2000);
 };
 
 export const onDeleteDiscSuccess = () => {
@@ -163,6 +156,7 @@ export const onCreateReviewSuccess = () => {
 // User Actions
 export const onSignUpSuccess = () => {
   messageContainer.innerHTML = "You've created a new user! Now Sign In";
+  messageContainer.classList.remove('hide');
 };
 
 export const onSignInSuccess = (userToken) => {
