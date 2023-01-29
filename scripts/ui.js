@@ -2,8 +2,8 @@ import { store } from './store.js';
 
 import { indexDisc } from './api.js';
 
+// grab from the DOM
 const messageContainer = document.querySelector('.message-container');
-//const authContainer = document.querySelector('.auth-container');
 const showDiscContainer = document.querySelector('#show-disc-container');
 const indexDiscsContainer = document.querySelector('.index-disc-container');
 const signUpContainer = document.querySelector('#sign-up-form-container');
@@ -11,7 +11,6 @@ const signInContainer = document.querySelector('#sign-in-form-container');
 const mainNav = document.querySelector('.main-nav');
 const secondaryNav = document.querySelector('.secondary-nav');
 const createDiscForm = document.querySelector('.create-disc-form');
-
 const reviewDiscForm = document.querySelector('.review-disc-form');
 
 // Disc Actions
@@ -46,6 +45,9 @@ export const onCreateDiscSuccess = () => {
 
 export const onShowDiscSuccess = (disc) => {
   let reviews = disc.reviews;
+  let html = '';
+  let html1 = '';
+  let i = 1;
 
   while (showDiscContainer.firstChild) {
     showDiscContainer.removeChild(showDiscContainer.lastChild);
@@ -66,7 +68,7 @@ export const onShowDiscSuccess = (disc) => {
   div.innerHTML = `
   <div class="stats-update-div">
     <div class="stats">
-      <h2>Stats</h2>
+      <h2>Stats.</h2>
       <p>name: ${disc.name}</p>
       <p>manufacturer: ${disc.manufacturer}</p>
       <p>plastic: ${disc.plastic}</p>
@@ -77,9 +79,9 @@ export const onShowDiscSuccess = (disc) => {
       <p>fade: ${disc.fade}</p>
     </div>
     <div class="update">
-      <h2>Update</h2>
+      <h2>Update.</h2>
       <form data-id="${disc._id}">
-          <input class="form-control"class="form-control" type="text" name="firstName" value="${disc.name}">
+          <input class="form-control"class="form-control" type="text" name="name" value="${disc.name}">
           <input class="form-control" type="text" name="manufacturer" value="${disc.manufacturer}">
           <input class="form-control" type="text" name="plastic" value="${disc.plastic}">
           <input class="form-control" type="text" name="type" value="${disc.type}">
@@ -93,34 +95,32 @@ export const onShowDiscSuccess = (disc) => {
     </div>
   </div>
   `;
-  let html = '';
-  let html1 = '';
-  let i = 1;
+
   reviews.forEach((review) => {
-    console.log(review);
     html += `<h3><u>Review ${i}</u></h3>`;
     html += `<div>${review.comment}</div>`;
     html += `<div>rating: ${review.rating}/10</div>`;
     html += `<div>----------------------------------------</div>`;
     i++;
   });
+
   html1 += `<form data-id="${disc._id}">
-            <input type="text" class="form-control" name="comment" placeholder="comment" />
-            <input type="text" class="form-control" name="rating" placeholder="rating" />
+            <input type="text" class="form-control" name="comment" placeholder="comment." />
+            <input type="text" class="form-control" name="rating" placeholder="rating." />
             <input type="submit" class="button1-design" value="create review." />
           </form>`;
 
   reviewDiv.innerHTML = html;
-  reviewDiv.classList.add('reviews');
   createDiv.innerHTML = html1;
+
+  reviewDiv.classList.add('reviews');
 
   while (reviewDiscForm.firstChild) {
     reviewDiscForm.removeChild(reviewDiscForm.lastChild);
   }
+
   reviewDiscForm.appendChild(createDiv);
-
   showDiscContainer.appendChild(div);
-
   mainReview.appendChild(reviewDiv);
   mainReview.appendChild(reviewDiscForm);
   showDiscContainer.appendChild(mainReview);
@@ -162,7 +162,9 @@ export const onSignInSuccess = (userToken) => {
   secondaryNav.classList.remove('hide');
 };
 
+// General Functionality
 export const onFailure = (error) => {
+  messageContainer.classList.remove('hide');
   messageContainer.innerHTML = `
         <h3>You've encountered an error. Try again later</h3>
         <p>${error}</p>
