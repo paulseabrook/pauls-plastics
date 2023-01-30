@@ -73,6 +73,8 @@ export const updateDisc = (data, id) => {
       Authorization: `Bearer ${store.userToken}`,
     },
     body: JSON.stringify(data),
+  }).then((response) => {
+    return response.status;
   });
 };
 
@@ -82,5 +84,7 @@ export const deleteDisc = (id) => {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
+  }).then((response) => {
+    console.log(response.status);
   });
 };

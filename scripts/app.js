@@ -18,6 +18,7 @@ import {
   onUpdateDiscSuccess,
   onDeleteDiscSuccess,
   onCreateReviewSuccess,
+  onUpdateDiscFailure,
   onFailure,
   homeFunc,
   addDiscFunc,
@@ -111,7 +112,17 @@ showDiscContainer.addEventListener('submit', (event) => {
       fade: event.target['fade'].value,
     },
   };
-  updateDisc(discData, id).then(onUpdateDiscSuccess).catch(onFailure);
+  updateDisc(discData, id)
+    .then((response) => {
+      console.log(response);
+      if (response == 204) {
+        console.log('response is 204');
+        onUpdateDiscSuccess();
+      } else if (response == 401) {
+        onUpdateDiscFailure();
+      }
+    })
+    .catch(onFailure);
   setTimeout(() => {
     showDisc(id)
       .then((res) => res.json())

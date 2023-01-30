@@ -145,7 +145,12 @@ export const onUpdateDiscSuccess = () => {
   messageContainer.innerHTML = 'You have updated a disc';
 };
 
-export const onDeleteDiscSuccess = () => {
+export const onUpdateDiscFailure = () => {
+  messageContainer.innerHTML =
+    'You do not have permissions to update this disc';
+};
+
+export const onDeleteDiscSuccess = (response) => {
   messageContainer.innerHTML = 'You have deleted a disc';
   setTimeout(() => {
     indexDisc()
@@ -180,7 +185,6 @@ export const onSignInSuccess = (userToken) => {
 // General Functionality
 export const onFailure = (error) => {
   messageContainer.classList.remove('hide');
-  console.log(error);
   messageContainer.innerHTML = `
         <h3>You've encountered an error. Try again later</h3>
         <p>${error}</p>
