@@ -60,5 +60,6 @@ THE disc golf review is an application that allows disc golfers to come together
 
 #### As a user, I want to:
 
-- Be able to add a professional disc golfer as a collection with a one to many relationship with different discs.
+- Be able to add a description of the disc's flight pattern when the disc is created.
 - Utilize search functionality to filter out the list of discs based on some criteria.
+- Be able to click a "Facebook", "Twitter", or "Instagram" button and be taken to the respective site to make a "post" about the disc.

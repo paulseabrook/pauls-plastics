@@ -1,6 +1,6 @@
 :root {
-  --main-green: #476545;
-  --main-blue: #3e657b;
+  --main-green: #43563c;
+  --main-blue: #536a78;
   --main-tan: #a99970;
   --main-red: rgb(183, 43, 43);
 }
@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: var(--main-tan);
+  /* https://www.vecteezy.com/vector-art/6298547-white-background-with-green-tech-hexagon */
+  background-image: url('./assets/stump.avif');
   font-family: 'Josefin Sans', sans-serif;
   width: 100%;
 }
@@ -29,13 +30,13 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 .main-nav {
   background-color: var(--main-green);
-  height: 25vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +47,7 @@ main {
 
 .secondary-nav {
   background-color: var(--main-green);
-  height: 30vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +75,9 @@ main {
   align-items: center;
   flex-basis: 33%;
   flex-direction: column;
-  padding: 30px;
+  padding: 20px 0px 20px 0px;
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
 }
 
 .auth-container {
@@ -82,10 +85,14 @@ main {
   align-items: center;
   justify-content: space-evenly;
   min-width: 75vh;
+  margin-top: 20px;
 }
 
 .auth-container > * {
   margin: 50px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
 }
 
 .nav-button {
@@ -155,7 +162,7 @@ main {
 .message-container {
   background-color: var(--main-blue);
   font-family: 'Josefin Sans', sans-serif;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,9 +183,18 @@ main {
   grid-row-gap: 5px;
   margin-top: 10vh;
   width: 50%;
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .create-disc-form > * {
+  border-radius: 10px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.flex-div {
   border-radius: 10px;
 }
 
@@ -189,11 +205,20 @@ main {
 }
 .update {
   margin-top: 3vh;
+  margin-bottom: 3vh;
   padding: 10px;
 }
 
 .stats {
-  padding: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
+}
+
+.update {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
 }
 
 .reviews {
@@ -229,6 +254,22 @@ main {
   height: 47px;
   border-bottom: 1px solid black;
   position: absolute;
+}
+
+.footer {
+  background-color: var(--main-green);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer > p {
+  margin: 5px;
 }
 
 /*  hide at bottom  */

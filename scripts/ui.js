@@ -12,14 +12,26 @@ const mainNav = document.querySelector('.main-nav');
 const secondaryNav = document.querySelector('.secondary-nav');
 const createDiscForm = document.querySelector('.create-disc-form');
 const reviewDiscForm = document.querySelector('.review-disc-form');
+const footer = document.querySelector('.footer');
+const inputs = document.querySelectorAll('input');
 
 // Disc Actions
 export const onIndexDiscSuccess = (discs) => {
+  // clear the values within input forms upon successful sign in
+  inputs.forEach((input) => {
+    if (input.type != 'submit') {
+      input.value = '';
+    }
+  });
+
+  // clear all of the children of indexDiscsContainer upon sign in before displaying them again
   while (indexDiscsContainer.firstChild) {
     indexDiscsContainer.removeChild(indexDiscsContainer.lastChild);
   }
+
   messageContainer.innerHTML = '<h3>discs.</h3>';
   messageContainer.classList.remove('hide');
+
   discs.forEach((disc) => {
     const div = document.createElement('div');
     div.classList.add('content-card');
@@ -27,6 +39,7 @@ export const onIndexDiscSuccess = (discs) => {
             <h3>${disc.name}</h3>
             <button type="button" class="button1-design" data-id="${disc._id}">info.</button>
         `;
+
     indexDiscsContainer.appendChild(div);
   });
 };
@@ -64,6 +77,7 @@ export const onShowDiscSuccess = (disc) => {
   showDiscContainer.classList.remove('hide');
   reviewDiscForm.classList.remove('hide');
   mainReview.classList.add('main-review');
+  footer.classList.add('hide');
 
   div.innerHTML = `
   <div class="stats-update-div">
@@ -165,6 +179,7 @@ export const onSignInSuccess = (userToken) => {
 // General Functionality
 export const onFailure = (error) => {
   messageContainer.classList.remove('hide');
+  console.log(error);
   messageContainer.innerHTML = `
         <h3>You've encountered an error. Try again later</h3>
         <p>${error}</p>
@@ -181,6 +196,14 @@ export const homeFunc = () => {
   showDiscContainer.classList.add('hide');
   reviewDiscForm.classList.add('hide');
   indexDiscsContainer.classList.add('hide');
+  footer.classList.remove('hide');
+
+  // clear the values within input forms upon successful sign out
+  inputs.forEach((input) => {
+    if (input.type != 'submit') {
+      input.value = '';
+    }
+  });
 };
 
 export const addDiscFunc = () => {
@@ -190,6 +213,7 @@ export const addDiscFunc = () => {
   messageContainer.innerHTML = '<h3>add disc below.</h3>';
   createDiscForm.classList.remove('hide');
   indexDiscsContainer.classList.add('hide');
+  footer.classList.add('hide');
 };
 
 export const discListFunc = () => {
@@ -202,4 +226,5 @@ export const discListFunc = () => {
   secondaryNav.classList.remove('hide');
   createDiscForm.classList.add('hide');
   showDiscContainer.classList.add('hide');
+  footer.classList.remove('hide');
 };
