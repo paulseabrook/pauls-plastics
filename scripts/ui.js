@@ -24,6 +24,7 @@ export const onIndexDiscSuccess = (discs) => {
     }
   });
 
+  footer.classList.add('hide');
   // clear all of the children of indexDiscsContainer upon sign in before displaying them again
   while (indexDiscsContainer.firstChild) {
     indexDiscsContainer.removeChild(indexDiscsContainer.lastChild);
