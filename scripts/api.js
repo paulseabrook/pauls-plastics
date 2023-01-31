@@ -2,7 +2,7 @@ import { store } from './store.js';
 
 // User actions
 export const signUp = (data) => {
-  return fetch(`http://localhost:8000/sign-up`, {
+  return fetch(`https://frozen-falls-95669.herokuapp.com/sign-up`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -13,7 +13,7 @@ export const signUp = (data) => {
 };
 
 export const signIn = (data) => {
-  return fetch(`http://localhost:8000/sign-in`, {
+  return fetch(`https://frozen-falls-95669.herokuapp.com/sign-in`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -25,7 +25,7 @@ export const signIn = (data) => {
 
 // Disc Actions
 export const indexDisc = () => {
-  return fetch('http://localhost:8000/discs', {
+  return fetch('https://frozen-falls-95669.herokuapp.com/discs', {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -33,7 +33,7 @@ export const indexDisc = () => {
 };
 
 export const showDisc = (id) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
+  return fetch(`https://frozen-falls-95669.herokuapp.com/discs/${id}`, {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -41,7 +41,7 @@ export const showDisc = (id) => {
 };
 
 export const createReview = (data) => {
-  return fetch(`http://localhost:8000/reviews`, {
+  return fetch(`https://frozen-falls-95669.herokuapp.com/reviews`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -53,7 +53,7 @@ export const createReview = (data) => {
 };
 
 export const createDisc = (data) => {
-  return fetch(`http://localhost:8000/discs`, {
+  return fetch(`https://frozen-falls-95669.herokuapp.com/discs`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -65,7 +65,7 @@ export const createDisc = (data) => {
 };
 
 export const updateDisc = (data, id) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
+  return fetch(`https://frozen-falls-95669.herokuapp.com/discs/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',
@@ -79,7 +79,7 @@ export const updateDisc = (data, id) => {
 };
 
 export const deleteDisc = (id) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
+  return fetch(`https://frozen-falls-95669.herokuapp.com/discs/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${store.userToken}`,
