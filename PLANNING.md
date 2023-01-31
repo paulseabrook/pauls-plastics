@@ -41,6 +41,7 @@
 - Be able to delete and update "reviews".
 - See which user left the "review".
 - See an "About" section.
+- Utilize a collapsible navigation bar.
 
 ---
 
