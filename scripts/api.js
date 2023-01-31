@@ -85,6 +85,6 @@ export const deleteDisc = (id) => {
       Authorization: `Bearer ${store.userToken}`,
     },
   }).then((response) => {
-    console.log(response.status);
+    return response.status;
   });
 };

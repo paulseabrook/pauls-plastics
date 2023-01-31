@@ -19,6 +19,7 @@ import {
   onDeleteDiscSuccess,
   onCreateReviewSuccess,
   onUpdateDiscFailure,
+  onDeleteDiscFailure,
   onFailure,
   homeFunc,
   addDiscFunc,
@@ -112,17 +113,19 @@ showDiscContainer.addEventListener('submit', (event) => {
       fade: event.target['fade'].value,
     },
   };
+
   updateDisc(discData, id)
     .then((response) => {
-      console.log(response);
+      // if response is 204, send success message
       if (response == 204) {
-        console.log('response is 204');
         onUpdateDiscSuccess();
+        // else if response is 401. send failure message
       } else if (response == 401) {
         onUpdateDiscFailure();
       }
     })
     .catch(onFailure);
+
   setTimeout(() => {
     showDisc(id)
       .then((res) => res.json())
@@ -138,7 +141,15 @@ showDiscContainer.addEventListener('click', (event) => {
 
   if (!id) return;
 
-  deleteDisc(id).then(onDeleteDiscSuccess).catch(onFailure);
+  deleteDisc(id)
+    .then((response) => {
+      if (response == 204) {
+        onDeleteDiscSuccess();
+      } else if (response == 401) {
+        onDeleteDiscFailure(id);
+      }
+    })
+    .catch(onFailure);
 });
 
 // Nav Bar Actions

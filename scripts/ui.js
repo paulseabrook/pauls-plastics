@@ -1,6 +1,6 @@
 import { store } from './store.js';
 
-import { indexDisc } from './api.js';
+import { indexDisc, showDisc } from './api.js';
 
 // grab from the DOM
 const messageContainer = document.querySelector('.message-container');
@@ -95,7 +95,7 @@ export const onShowDiscSuccess = (disc) => {
     </div>
     <div class="update">
       <h2>Update.</h2>
-      <form data-id="${disc._id}">
+      <form class="form-group" data-id="${disc._id}">
           <input class="form-control"class="form-control" type="text" name="name" value="${disc.name}">
           <input class="form-control" type="text" name="manufacturer" value="${disc.manufacturer}">
           <input class="form-control" type="text" name="plastic" value="${disc.plastic}">
@@ -104,9 +104,11 @@ export const onShowDiscSuccess = (disc) => {
           <input class="form-control" type="number" name="glide" value="${disc.glide}">
           <input class="form-control" type="number" name="turn" value="${disc.turn}">
           <input class="form-control" type="number" name="fade" value="${disc.fade}">
-          <button type="submit" class="button2-design">update disc.</button>
-          <button type="button" class="button3-design" data-id="${disc._id}">delete disc.</button>
-      </form>
+          <div class="btn-group">
+            <button type="submit" class="btn button2-design">update disc.</button>
+            <button type="button" class="btn button3-design" data-id="${disc._id}">delete disc.</button>
+          </div>
+        </form>
     </div>
   </div>
   `;
@@ -119,9 +121,15 @@ export const onShowDiscSuccess = (disc) => {
     i++;
   });
 
-  html1 += `<form data-id="${disc._id}">
+  html1 += `<form class="review-form" data-id="${disc._id}">
+          <div class="form-floating ">
             <input type="text" class="form-control" name="comment" placeholder="comment." />
-            <input type="text" class="form-control" name="rating" placeholder="rating." />
+            <label for="comment" class=form-label">comment.</label>
+          </div>
+          <div class="form-floating ">
+            <input type="number" class="form-control " name="rating" placeholder="rating." />
+            <label for="rating" class="form-label custom-select">rating.</label>
+          </div>
             <input type="submit" class="button1-design" value="create review." />
           </form>`;
 
@@ -150,13 +158,26 @@ export const onUpdateDiscFailure = () => {
     'You do not have permissions to update this disc';
 };
 
-export const onDeleteDiscSuccess = (response) => {
+export const onDeleteDiscSuccess = () => {
   messageContainer.innerHTML = 'You have deleted a disc';
   setTimeout(() => {
     indexDisc()
       .then((res) => res.json())
       .then((res) => onIndexDiscSuccess(res.discs))
       .then(discListFunc())
+      .catch(onFailure);
+  }, 2000);
+};
+
+export const onDeleteDiscFailure = (id) => {
+  messageContainer.innerHTML =
+    'You do not have permissions to delete this disc';
+  setTimeout(() => {
+    showDisc(id)
+      .then((res) => res.json())
+      .then((res) => {
+        onShowDiscSuccess(res.disc);
+      })
       .catch(onFailure);
   }, 2000);
 };

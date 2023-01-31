@@ -46,10 +46,7 @@
     <div class="auth-container">
       <form id="sign-up-form-container">
         <h2>New Golfer? Sign Up</h2>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label"
-            >email address.</label
-          >
+        <div class="form-floating">
           <input
             type="email"
             class="form-control"
@@ -57,39 +54,46 @@
             placeholder="name@example.com"
             name="email"
           />
-        </div>
-        <div class="mb-3">
-          <label for="inputPassword" class="col-sm-2 col-form-label"
-            >password.</label
+          <label for="exampleFormControlInput1" class="form-label"
+            >email address.</label
           >
+        </div>
+        <div class="form-floating">
           <input
             type="password"
             class="form-control"
             id="inputPassword"
+            placeholder="password"
             name="password"
           />
+          <label for="inputPassword" class="form-label">password.</label>
         </div>
         <button type="submit" class="button1-design">sign in.</button>
       </form>
 
       <form id="sign-in-form-container">
         <h2>Returning Golfer? Sign In</h2>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label"
-            >email address.</label
-          >
+        <div class="form-floating">
           <input
             type="email"
             class="form-control"
-            placeholder="name@example.com"
+            placeholder="email"
             name="email"
           />
+          <label for="exampleFormControlInput1" class="form-label"
+            >email address.</label
+          >
         </div>
-        <div class="mb-3">
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="password"
+          />
           <label for="inputPassword" class="col-sm-2 col-form-label"
             >password.</label
           >
-          <input type="password" class="form-control" name="password" />
         </div>
         <button type="submit" class="button1-design">sign in.</button>
       </form>
