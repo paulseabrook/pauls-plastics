@@ -26,6 +26,7 @@ import {
   discListFunc,
 } from './ui.js';
 
+//
 const signUpContainer = document.querySelector('#sign-up-form-container');
 const signInContainer = document.querySelector('#sign-in-form-container');
 const home = document.querySelector('.home');
