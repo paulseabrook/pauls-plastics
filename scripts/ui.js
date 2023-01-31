@@ -14,7 +14,6 @@ const createDiscForm = document.querySelector('.create-disc-form');
 const reviewDiscForm = document.querySelector('.review-disc-form');
 const footer = document.querySelector('.footer');
 const inputs = document.querySelectorAll('input');
-const mainReview = document.querySelector('main-review');
 
 // Disc Actions
 export const onIndexDiscSuccess = (discs) => {
@@ -186,7 +185,6 @@ export const onDeleteDiscFailure = (id) => {
 export const onCreateReviewSuccess = () => {
   messageContainer.innerHTML = 'You have left a review';
   reviewDiscForm.classList.add('hide');
-  mainReview.classList.add('hide');
 };
 
 // User Actions
