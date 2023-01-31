@@ -246,7 +246,7 @@ main {
 
 .review-disc-form {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   padding: 10px;
 }
@@ -257,7 +257,6 @@ main {
 
 .main-review {
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   background-color: var(--main-green);
   width: 100%;
