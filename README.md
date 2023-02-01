@@ -35,8 +35,6 @@ THE disc golf review is an application that allows disc golfers to come together
 
 ## Getting Started
 
-### To access the application, please click here
-
 - You will first sign up with an email address and password.
 - Once you are signed up, you will sign in with that same email address and password.
 - You will be brought to a screen showing the list of discs.
