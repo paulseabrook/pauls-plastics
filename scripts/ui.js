@@ -33,6 +33,7 @@ export const onIndexDiscSuccess = (discs) => {
   messageContainer.innerHTML = '<h3>discs.</h3>';
   messageContainer.classList.remove('hide');
 
+  // for each disc, create a div, add a class, add the innerHTML as the disc name and as an "info." button, and append to another div in our html
   discs.forEach((disc) => {
     const div = document.createElement('div');
     div.classList.add('content-card');
@@ -45,6 +46,7 @@ export const onIndexDiscSuccess = (discs) => {
   });
 };
 
+// upon successful creation of a disc, change the message, unhide it, and display our disc list
 export const onCreateDiscSuccess = () => {
   indexDiscsContainer.classList.add('hide');
   messageContainer.innerText = 'You have created a disc!';
@@ -58,11 +60,13 @@ export const onCreateDiscSuccess = () => {
 };
 
 export const onShowDiscSuccess = (disc) => {
+  // set up variables to be used torwards the end of the function
   let reviews = disc.reviews;
   let html = '';
   let html1 = '';
   let i = 1;
 
+  // while there are children of showDiscContainer, remove them
   while (showDiscContainer.firstChild) {
     showDiscContainer.removeChild(showDiscContainer.lastChild);
   }
@@ -80,6 +84,7 @@ export const onShowDiscSuccess = (disc) => {
   mainReview.classList.add('main-review');
   footer.classList.add('hide');
 
+  // make the div's innerHTML the stats and update form
   div.innerHTML = `
   <div class="stats-update-div">
     <div class="stats">
@@ -113,6 +118,7 @@ export const onShowDiscSuccess = (disc) => {
   </div>
   `;
 
+  // for each review, add a Review with number incremented based on number of reviews, add it's comment, and add it's rating out of 10
   reviews.forEach((review) => {
     html += `<h3><u>Review ${i}</u></h3>`;
     html += `<div>${review.comment}</div>`;
@@ -121,6 +127,7 @@ export const onShowDiscSuccess = (disc) => {
     i++;
   });
 
+  // add the create review form to this html
   html1 += `<form class="review-form" data-id="${disc._id}">
           <div class="form-floating ">
             <input type="text" class="form-control" name="comment" placeholder="comment." />
@@ -133,6 +140,7 @@ export const onShowDiscSuccess = (disc) => {
             <input type="submit" class="button1-design" value="create review." />
           </form>`;
 
+  // add the html to the two divs
   reviewDiv.innerHTML = html;
   createDiv.innerHTML = html1;
 
@@ -142,6 +150,7 @@ export const onShowDiscSuccess = (disc) => {
     reviewDiscForm.removeChild(reviewDiscForm.lastChild);
   }
 
+  // append what needs to be appended to their respective divs
   reviewDiscForm.appendChild(createDiv);
   showDiscContainer.appendChild(div);
   mainReview.appendChild(reviewDiv);
@@ -149,15 +158,18 @@ export const onShowDiscSuccess = (disc) => {
   showDiscContainer.appendChild(mainReview);
 };
 
+// if disc succeeds in updating, update message
 export const onUpdateDiscSuccess = () => {
   messageContainer.innerHTML = 'You have updated a disc';
 };
 
+// if disc fails to update, update messaging
 export const onUpdateDiscFailure = () => {
   messageContainer.innerHTML =
     'You do not have permissions to update this disc';
 };
 
+// if disc fails to delete, update messaging, show disc list again
 export const onDeleteDiscSuccess = () => {
   messageContainer.innerHTML = 'You have deleted a disc';
   setTimeout(() => {
@@ -169,6 +181,7 @@ export const onDeleteDiscSuccess = () => {
   }, 2000);
 };
 
+// if disc fails to update,  update message, show disc stats again
 export const onDeleteDiscFailure = (id) => {
   messageContainer.innerHTML =
     'You do not have permissions to delete this disc';
@@ -182,6 +195,7 @@ export const onDeleteDiscFailure = (id) => {
   }, 2000);
 };
 
+// if review created, update messaging
 export const onCreateReviewSuccess = () => {
   messageContainer.innerHTML = 'You have left a review';
   reviewDiscForm.classList.add('hide');
@@ -212,6 +226,7 @@ export const onFailure = (error) => {
     `;
 };
 
+// function for signing out
 export const homeFunc = () => {
   signUpContainer.classList.remove('hide');
   signInContainer.classList.remove('hide');
@@ -232,6 +247,7 @@ export const homeFunc = () => {
   });
 };
 
+// function for the add disc button
 export const addDiscFunc = () => {
   messageContainer.classList.remove('hide');
   reviewDiscForm.classList.add('hide');
@@ -242,6 +258,7 @@ export const addDiscFunc = () => {
   footer.classList.add('hide');
 };
 
+// function for the disc list button
 export const discListFunc = () => {
   reviewDiscForm.classList.add('hide');
   messageContainer.innerHTML = '';

@@ -1,3 +1,4 @@
+// import functionality from api.js
 import {
   signUp,
   signIn,
@@ -9,6 +10,7 @@ import {
   createReview,
 } from './api.js';
 
+// import functionality from ui.js
 import {
   onSignUpSuccess,
   onSignInSuccess,
@@ -26,7 +28,7 @@ import {
   discListFunc,
 } from './ui.js';
 
-//
+// grab our DOM elements
 const signUpContainer = document.querySelector('#sign-up-form-container');
 const signInContainer = document.querySelector('#sign-in-form-container');
 const home = document.querySelector('.home');
@@ -39,6 +41,7 @@ const reviewDiscForm = document.querySelector('.review-disc-form');
 
 // User Actions
 
+// when signing up, prevent the form from refreshing, assign the email and password to userData, call the signup (API call) function on userData, and handle for success or failure
 signUpContainer.addEventListener('submit', (event) => {
   event.preventDefault();
   const userData = {
@@ -50,6 +53,7 @@ signUpContainer.addEventListener('submit', (event) => {
   signUp(userData).then(onSignUpSuccess).catch(onFailure);
 });
 
+// when signing in, prevent the form from refreshing, assign the email and password to userData, call the signin (API call) function, and handle for success by showing the discs or handle for failure
 signInContainer.addEventListener('submit', (event) => {
   event.preventDefault();
   const userData = {
@@ -69,6 +73,7 @@ signInContainer.addEventListener('submit', (event) => {
 
 // Disc Actions
 
+// show a specific disc
 indexDiscsContainer.addEventListener('click', (event) => {
   const id = event.target.getAttribute('data-id');
 
@@ -82,6 +87,7 @@ indexDiscsContainer.addEventListener('click', (event) => {
     .catch(onFailure);
 });
 
+// create a disc based on what the user input into the add disc form
 createDiscForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const discData = {
@@ -99,6 +105,7 @@ createDiscForm.addEventListener('submit', (event) => {
   createDisc(discData).then(onCreateDiscSuccess).catch(onFailure);
 });
 
+// functionality for updating a disc based on the user's input
 showDiscContainer.addEventListener('submit', (event) => {
   event.preventDefault();
   const id = event.target.getAttribute('data-id');
@@ -137,6 +144,7 @@ showDiscContainer.addEventListener('submit', (event) => {
   }, 2000);
 });
 
+// functionality for deleting a disc
 showDiscContainer.addEventListener('click', (event) => {
   const id = event.target.getAttribute('data-id');
 
@@ -170,11 +178,15 @@ discList.addEventListener('click', () => {
 
 // Review Actions
 
+// functionality for creating a review and then showing the disc again.
 reviewDiscForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  // pull the id from the event.target
   const id = event.target.getAttribute('data-id');
 
+  // if no id, return out
   if (!id) return;
+  // put the data in reviewData
   const reviewData = {
     review: {
       comment: event.target['comment'].value,
@@ -182,7 +194,10 @@ reviewDiscForm.addEventListener('submit', (event) => {
       discId: id,
     },
   };
+
+  // make the API Call, handle for success or failure
   createReview(reviewData).then(onCreateReviewSuccess).catch(onFailure);
+  // show the disc that we just reviewed on based on the id above
   setTimeout(() => {
     showDisc(id)
       .then((res) => res.json())
