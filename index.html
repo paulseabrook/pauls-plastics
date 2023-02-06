@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- A good practice to get into is to add `defer` attribute to any script tag that is in a child of the `head` element -->
     <script type="module" src="./scripts/app.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -27,6 +28,7 @@
   </head>
   <body>
     <!-- Navbar -->
+    <!-- You should only have 1 `nav` element per DOM. Remove this one or the one on line 36 -->
     <nav class="main-nav">
       <div>welcome to THE disc golf review.</div>
     </nav>
