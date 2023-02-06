@@ -73,6 +73,7 @@ export const updateDisc = (data, id) => {
       Authorization: `Bearer ${store.userToken}`,
     },
     body: JSON.stringify(data),
+    // love the `.then` here to just return the status
   }).then((response) => {
     return response.status;
   });
