@@ -1,47 +1,47 @@
-import { store } from './store.js';
+import { store } from './store.js'
 
 // User actions
 export const signUp = (data) => {
-  return fetch(`http://localhost:8000/sign-up`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/sign-up`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
-  });
-};
+  })
+}
 
 export const signIn = (data) => {
-  return fetch(`http://localhost:8000/sign-in`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/sign-in`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
-  });
-};
+  })
+}
 
 // Disc Actions
 export const indexDisc = () => {
-  return fetch('http://localhost:8000/discs', {
+  return fetch('https://pauls-plastics-server.onrender.com/discs', {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
-  });
-};
+  })
+}
 
 export const showDisc = (id) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/${id}`, {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
-  });
-};
+  })
+}
 
 export const createReview = (data) => {
-  return fetch(`http://localhost:8000/reviews`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/reviews`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -49,11 +49,11 @@ export const createReview = (data) => {
       Authorization: `Bearer ${store.userToken}`,
     },
     body: JSON.stringify(data),
-  });
-};
+  })
+}
 
 export const createDisc = (data) => {
-  return fetch(`http://localhost:8000/discs`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/discs`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -61,11 +61,11 @@ export const createDisc = (data) => {
       Authorization: `Bearer ${store.userToken}`,
     },
     body: JSON.stringify(data),
-  });
-};
+  })
+}
 
 export const updateDisc = (data, id) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/discs/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',
@@ -74,17 +74,17 @@ export const updateDisc = (data, id) => {
     },
     body: JSON.stringify(data),
   }).then((response) => {
-    return response.status;
-  });
-};
+    return response.status
+  })
+}
 
 export const deleteDisc = (id) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/discs/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
   }).then((response) => {
-    return response.status;
-  });
-};
+    return response.status
+  })
+}
