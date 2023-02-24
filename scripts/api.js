@@ -33,7 +33,7 @@ export const indexDisc = () => {
 }
 
 export const showDisc = (id) => {
-  return fetch(`https://pauls-plastics-server.onrender.com/${id}`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/discs/${id}`, {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
