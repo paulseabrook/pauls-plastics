@@ -30,137 +30,142 @@
     <title>paul's plastics</title>
     <link rel="shortcut icon" href="#" />
   </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="main-nav">
-      <div><span class="welcome">welcome to</span> paul's plastics.</div>
-      <h5>the "cutting edge" of disc golf reviews.</h5>
-    </nav>
+  <div id="page-container">
+    <div id="content-wrap">
+      <body>
+        <!-- Navbar -->
 
-    <nav class="secondary-nav hide">
-      <div class="secondary-header">paul's plastics.</div>
-      <div class="nav-button disc-list">disc list.</div>
-      <div class="nav-button add-disc">add disc.</div>
-      <div class="nav-button home">sign out.</div>
-    </nav>
-    <div>
-      <div class="message-container hide"></div>
+        <nav class="main-nav">
+          <div><span class="welcome">welcome to</span> paul's plastics.</div>
+          <h5>the "cutting edge" of disc golf reviews.</h5>
+        </nav>
+
+        <nav class="secondary-nav hide">
+          <div class="secondary-header">paul's plastics.</div>
+          <div class="nav-button disc-list">disc list.</div>
+          <div class="nav-button add-disc">add disc.</div>
+          <div class="nav-button home">sign out.</div>
+        </nav>
+        <div>
+          <div class="message-container hide"></div>
+        </div>
+        <!-- Container for sign-up and sign-in form -->
+        <div class="auth-container">
+          <form id="sign-up-form-container">
+            <h2>New Golfer? Sign Up</h2>
+            <div class="form-floating">
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+                name="email"
+              />
+              <label for="exampleFormControlInput1" class="form-label"
+                >email address.</label
+              >
+            </div>
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="inputPassword"
+                placeholder="password"
+                name="password"
+              />
+              <label for="inputPassword" class="form-label">password.</label>
+            </div>
+            <button type="submit" class="button1-design">sign in.</button>
+          </form>
+
+          <form id="sign-in-form-container">
+            <h2>Returning Golfer? Sign In</h2>
+            <div class="form-floating">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="email"
+                name="email"
+              />
+              <label for="exampleFormControlInput1" class="form-label"
+                >email address.</label
+              >
+            </div>
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                placeholder="password"
+              />
+              <label for="inputPassword" class="col-sm-2 col-form-label"
+                >password.</label
+              >
+            </div>
+            <button type="submit" class="button1-design">sign in.</button>
+          </form>
+        </div>
+
+        <div class="index-disc-container hide"></div>
+
+        <div class="hide container" id="show-disc-container"></div>
+
+        <div class="flex-div">
+          <form class="create-disc-form hide">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="name"
+            />
+            <input
+              type="text"
+              name="manufacturer"
+              class="form-control"
+              placeholder="manufacturer"
+            />
+            <input
+              type="text"
+              name="plastic"
+              class="form-control"
+              placeholder="plastic"
+            />
+            <input
+              type="text"
+              name="type"
+              class="form-control"
+              placeholder="type"
+            />
+            <input
+              type="Number"
+              name="speed"
+              class="form-control"
+              placeholder="speed"
+            />
+            <input
+              type="Number"
+              name="glide"
+              class="form-control"
+              placeholder="glide"
+            />
+            <input
+              type="Number"
+              name="turn"
+              class="form-control"
+              placeholder="turn"
+            />
+            <input
+              type="Number"
+              name="fade"
+              class="form-control"
+              placeholder="fade"
+            />
+            <input type="submit" class="button2-design" value="create disc." />
+          </form>
+        </div>
+        <footer class="footer"><p>github: paulseabrook</p></footer>
+      </body>
     </div>
-    <!-- Container for sign-up and sign-in form -->
-    <div class="auth-container">
-      <form id="sign-up-form-container">
-        <h2>New Golfer? Sign Up</h2>
-        <div class="form-floating">
-          <input
-            type="email"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="name@example.com"
-            name="email"
-          />
-          <label for="exampleFormControlInput1" class="form-label"
-            >email address.</label
-          >
-        </div>
-        <div class="form-floating">
-          <input
-            type="password"
-            class="form-control"
-            id="inputPassword"
-            placeholder="password"
-            name="password"
-          />
-          <label for="inputPassword" class="form-label">password.</label>
-        </div>
-        <button type="submit" class="button1-design">sign in.</button>
-      </form>
-
-      <form id="sign-in-form-container">
-        <h2>Returning Golfer? Sign In</h2>
-        <div class="form-floating">
-          <input
-            type="email"
-            class="form-control"
-            placeholder="email"
-            name="email"
-          />
-          <label for="exampleFormControlInput1" class="form-label"
-            >email address.</label
-          >
-        </div>
-        <div class="form-floating">
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            placeholder="password"
-          />
-          <label for="inputPassword" class="col-sm-2 col-form-label"
-            >password.</label
-          >
-        </div>
-        <button type="submit" class="button1-design">sign in.</button>
-      </form>
-    </div>
-
-    <div class="index-disc-container hide"></div>
-
-    <div class="hide container" id="show-disc-container"></div>
     <div class="review-disc-form hide"></div>
-
-    <div class="flex-div">
-      <form class="create-disc-form hide">
-        <input
-          type="text"
-          name="name"
-          class="form-control"
-          placeholder="name"
-        />
-        <input
-          type="text"
-          name="manufacturer"
-          class="form-control"
-          placeholder="manufacturer"
-        />
-        <input
-          type="text"
-          name="plastic"
-          class="form-control"
-          placeholder="plastic"
-        />
-        <input
-          type="text"
-          name="type"
-          class="form-control"
-          placeholder="type"
-        />
-        <input
-          type="Number"
-          name="speed"
-          class="form-control"
-          placeholder="speed"
-        />
-        <input
-          type="Number"
-          name="glide"
-          class="form-control"
-          placeholder="glide"
-        />
-        <input
-          type="Number"
-          name="turn"
-          class="form-control"
-          placeholder="turn"
-        />
-        <input
-          type="Number"
-          name="fade"
-          class="form-control"
-          placeholder="fade"
-        />
-        <input type="submit" class="button2-design" value="create disc." />
-      </form>
-    </div>
-    <footer class="footer"><p>github: paulseabrook</p></footer>
-  </body>
+  </div>
 </html>
