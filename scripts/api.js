@@ -1,5 +1,7 @@
 import { store } from './store.js'
 
+// for local dev - http://localhost:8000/
+
 // User actions
 export const signUp = (data) => {
   return fetch(`https://pauls-plastics-server.onrender.com/sign-up`, {

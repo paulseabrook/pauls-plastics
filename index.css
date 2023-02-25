@@ -1,6 +1,6 @@
 :root {
   --main-green: #43563c;
-  --main-blue: #536a78;
+  --main-blue: #6a8da3;
   --main-tan: #a99970;
   --main-red: rgb(183, 43, 43);
 }
@@ -11,7 +11,7 @@
 
 body {
   /* https://www.vecteezy.com/vector-art/6298547-white-background-with-green-tech-hexagon */
-  background-image: url('./assets/stump.avif');
+  background-image: url('./assets/white.jpeg');
   font-family: 'Josefin Sans', sans-serif;
   width: 100%;
   -moz-background-size: cover;
@@ -39,7 +39,7 @@ main {
 }
 
 .main-nav {
-  background-color: var(--main-green);
+  background-color: var(--main-blue);
   height: 20vh;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ main {
 }
 
 .secondary-nav {
-  background-color: var(--main-green);
+  background-color: var(--main-blue);
   height: 10vh;
   display: flex;
 
@@ -264,7 +264,7 @@ main {
 .main-review {
   display: flex;
   justify-content: space-evenly;
-  background-color: var(--main-green);
+  background-color: var(--main-blue);
   width: 100%;
   position: absolute;
   left: 0;
@@ -279,7 +279,7 @@ main {
 }
 
 .footer {
-  background-color: var(--main-green);
+  background-color: var(--main-blue);
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -298,11 +298,20 @@ main {
   background: none !important;
 }
 
-@media (max-width: 1433px) {
+h5 {
+  margin-top: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.welcome {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* @media (max-width: 1433px) {
   body {
     background-size: auto;
   }
-}
+} */
 
 /*  hide at bottom  */
 .hide {
