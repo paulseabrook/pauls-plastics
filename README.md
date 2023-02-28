@@ -1,18 +1,20 @@
-# THE disc golf review
+# paul's plastics
 
-THE disc golf review is an application that allows disc golfers to come together to add their favorite discs and check stats and information on others. They can leave comments and ratings based on their experience with a particular disc.
+paul's plastics is an application that allows disc golfers to come together to add their favorite discs and check stats and information on others. They can leave comments and ratings based on their experience with a particular disc.
+
+### Access the project [here](https://paulseabrook.github.io/pauls-plastics/)
 
 ---
 
 ## Screenshots
 
-![wireframe1](./assets/screenshot1.png)
+![wireframe1](./assets/paulsPlastics1.png)
 
-![wireframe1](./assets/screenshot2.png)
+![wireframe1](./assets/paulsPlastics2.png)
 
-![wireframe1](./assets/screenshot3.png)
+![wireframe1](./assets/paulsPlastics3.png)
 
-![wireframe1](./assets/screenshot4.png)
+![wireframe1](./assets/paulsPlastics4.png)
 
 ---
 
