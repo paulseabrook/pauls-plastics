@@ -1,4 +1,4 @@
-# paul's plastics
+# paul's plastics.
 
 paul's plastics is an application that allows disc golfers to come together to add their favorite discs and check stats and information on others. They can leave comments and ratings based on their experience with a particular disc.
 
