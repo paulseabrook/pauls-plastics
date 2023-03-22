@@ -15,6 +15,12 @@ const reviewDiscForm = document.querySelector('.review-disc-form')
 const footer = document.querySelector('.footer')
 const inputs = document.querySelectorAll('input')
 
+// make initial call to wake up server
+
+indexDisc()
+  .then((res) => res.json)
+  .then((resJson) => console.log(resJson))
+
 // Disc Actions
 export const onIndexDiscSuccess = (discs) => {
   // clear the values within input forms upon successful sign in
