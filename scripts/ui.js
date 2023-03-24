@@ -17,9 +17,9 @@ const inputs = document.querySelectorAll('input')
 
 // make initial call to wake up server
 
-indexDisc()
-  .then((res) => res.json)
-  .then((resJson) => console.log(resJson))
+// indexDisc()
+//   .then((res) => res.json)
+//   .then((resJson) => console.log(resJson))
 
 // Disc Actions
 export const onIndexDiscSuccess = (discs) => {
