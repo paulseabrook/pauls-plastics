@@ -5,7 +5,7 @@ import { store } from './store.js'
 // for local dev - http://localhost:8000/sign-up
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/sign-up
 export const signUp = (data) => {
-  return fetch(`http://localhost:8000/sign-up`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/sign-up`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -18,7 +18,7 @@ export const signUp = (data) => {
 // for local dev - http://localhost:8000/sign-in
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/sign-in
 export const signIn = (data) => {
-  return fetch(`http://localhost:8000/sign-in`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/sign-in`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -33,7 +33,7 @@ export const signIn = (data) => {
 // for local dev - http://localhost:8000/discs
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/discs
 export const indexDisc = () => {
-  return fetch(' http://localhost:8000/discs', {
+  return fetch(' https://pauls-plastics-server.onrender.com/discs', {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -41,9 +41,9 @@ export const indexDisc = () => {
 }
 
 // for local dev - http://localhost:8000/discs/${id}
-// for render deployed app, use: http://localhost:8000/discs/${id}
+// for render deployed app, use: https://pauls-plastics-server.onrender.com/discs/${id}
 export const showDisc = (id) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
+  return fetch(`https://pauls-plastics-server.onrender.com/discs/${id}`, {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -65,8 +65,51 @@ export const createDisc = (data) => {
 }
 
 // for local dev - http://localhost:8000/discs/${id}
-// for render deployed app, use: http://localhost:8000/discs/${id}
+// for render deployed app, use:  https://pauls-plastics-server.onrender.com/discs/${id}
 export const updateDisc = (data, id) => {
+  return fetch(` https://pauls-plastics-server.onrender.com/discs/${id}`, {
+    method: 'PATCH',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${store.userToken}`,
+    },
+    body: JSON.stringify(data),
+  }).then((response) => {
+    return response.status
+  })
+}
+
+// for local dev - http://localhost:8000/discs/${id}
+// for render deployed app, use:  https://pauls-plastics-server.onrender.com/discs/${id}
+export const deleteDisc = (id) => {
+  return fetch(`https://pauls-plastics-server.onrender.com/discs/${id}`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${store.userToken}`,
+    },
+  }).then((response) => {
+    return response.status
+  })
+}
+
+// Review Actions
+
+// for local dev = http://localhost:8000/reviews
+// for render deployed app, use: https://pauls-plastics-server.onrender.com/reviews
+export const createReview = (data) => {
+  return fetch(`https://pauls-plastics-server.onrender.com/reviews`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${store.userToken}`,
+    },
+    body: JSON.stringify(data),
+  })
+}
+
+export const updateReview = (data, id) => {
   return fetch(`http://localhost:8000/discs/${id}`, {
     method: 'PATCH',
     headers: {
@@ -82,7 +125,7 @@ export const updateDisc = (data, id) => {
 
 // for local dev - http://localhost:8000/discs/${id}
 // for render deployed app, use: http://localhost:8000/discs/${id}
-export const deleteDisc = (id) => {
+export const deleteReview = (id) => {
   return fetch(`http://localhost:8000/discs/${id}`, {
     method: 'DELETE',
     headers: {
@@ -90,21 +133,5 @@ export const deleteDisc = (id) => {
     },
   }).then((response) => {
     return response.status
-  })
-}
-
-// Review Actions
-
-// for local dev = http://localhost:8000/discs/${id}
-// for render deployed app, use: https://pauls-plastics-server.onrender.com/reviews
-export const createReview = (data) => {
-  return fetch(`http://localhost:8000/discs/${id}`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${store.userToken}`,
-    },
-    body: JSON.stringify(data),
   })
 }
