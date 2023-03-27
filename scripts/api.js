@@ -4,8 +4,9 @@ import { store } from './store.js'
 
 // for local dev - http://localhost:8000/sign-up
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/sign-up
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/sign-up
 export const signUp = (data) => {
-  return fetch(`https://pauls-plastics-server.onrender.com/sign-up`, {
+  return fetch(`https://pauls-plastics.fly.dev/sign-up`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -17,8 +18,9 @@ export const signUp = (data) => {
 
 // for local dev - http://localhost:8000/sign-in
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/sign-in
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/sign-in
 export const signIn = (data) => {
-  return fetch(`https://pauls-plastics-server.onrender.com/sign-in`, {
+  return fetch(`https://pauls-plastics.fly.dev/sign-in`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -32,8 +34,9 @@ export const signIn = (data) => {
 
 // for local dev - http://localhost:8000/discs
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/discs
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs
 export const indexDisc = () => {
-  return fetch(' https://pauls-plastics-server.onrender.com/discs', {
+  return fetch(' https://pauls-plastics.fly.dev/discs', {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -42,8 +45,9 @@ export const indexDisc = () => {
 
 // for local dev - http://localhost:8000/discs/${id}
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/discs/${id}
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs/${id}
 export const showDisc = (id) => {
-  return fetch(`https://pauls-plastics-server.onrender.com/discs/${id}`, {
+  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -52,8 +56,9 @@ export const showDisc = (id) => {
 
 // for local dev - http://localhost:8000/discs
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/discs
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs
 export const createDisc = (data) => {
-  return fetch(`https://pauls-plastics-server.onrender.com/discs`, {
+  return fetch(`https://pauls-plastics.fly.dev/discs`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -66,8 +71,9 @@ export const createDisc = (data) => {
 
 // for local dev - http://localhost:8000/discs/${id}
 // for render deployed app, use:  https://pauls-plastics-server.onrender.com/discs/${id}
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs/${id}
 export const updateDisc = (data, id) => {
-  return fetch(` https://pauls-plastics-server.onrender.com/discs/${id}`, {
+  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',
@@ -82,8 +88,9 @@ export const updateDisc = (data, id) => {
 
 // for local dev - http://localhost:8000/discs/${id}
 // for render deployed app, use:  https://pauls-plastics-server.onrender.com/discs/${id}
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs/${id}
 export const deleteDisc = (id) => {
-  return fetch(`https://pauls-plastics-server.onrender.com/discs/${id}`, {
+  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${store.userToken}`,
@@ -97,8 +104,9 @@ export const deleteDisc = (id) => {
 
 // for local dev = http://localhost:8000/reviews
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/reviews
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs
 export const createReview = (data) => {
-  return fetch(`https://pauls-plastics-server.onrender.com/reviews`, {
+  return fetch(`https://pauls-plastics.fly.dev/discs`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
