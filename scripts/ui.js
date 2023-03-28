@@ -72,6 +72,8 @@ export const onShowDiscSuccess = (disc) => {
   let html1 = ''
   let i = 1
 
+  console.log(disc._id)
+
   // while there are children of showDiscContainer, remove them
   while (showDiscContainer.firstChild) {
     showDiscContainer.removeChild(showDiscContainer.lastChild)

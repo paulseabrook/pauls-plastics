@@ -1,3 +1,5 @@
+/////////////
+
 import { store } from './store.js'
 
 // User actions
@@ -104,9 +106,9 @@ export const deleteDisc = (id) => {
 
 // for local dev = http://localhost:8000/reviews
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/reviews
-// for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs
+// for fly.io deployed app, use: https://pauls-plastics.fly.dev/reviews/
 export const createReview = (data) => {
-  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
+  return fetch(`https://pauls-plastics.fly.dev/reviews`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -135,12 +137,13 @@ export const updateReview = (data, id) => {
 
 // for local dev = http://localhost:8000/reviews/${id}
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/reviews/${id}
-export const deleteReview = (id) => {
+export const deleteReview = (data, id) => {
   return fetch(`https://pauls-plastics.fly.dev/reviews/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
+    body: JSON.stringify(data),
   }).then((response) => {
     return response.status
   })
