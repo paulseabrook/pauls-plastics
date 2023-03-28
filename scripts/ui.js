@@ -232,7 +232,6 @@ export const onFailure = (error) => {
 
 // function for signing out
 export const homeFunc = () => {
-  signUpContainer.classList.remove('hide')
   signInContainer.classList.remove('hide')
   mainNav.classList.remove('hide')
   secondaryNav.classList.add('hide')

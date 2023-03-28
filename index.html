@@ -48,8 +48,8 @@
     </div>
     <!-- Container for sign-up and sign-in form -->
     <div class="auth-container">
-      <form id="sign-up-form-container">
-        <h2>New Golfer? Sign Up</h2>
+      <form id="sign-up-form-container" class="hide">
+        <h2 class="authHeader">New User? Let's Sign Up</h2>
         <div class="form-floating">
           <input
             type="email"
@@ -72,11 +72,14 @@
           />
           <label for="inputPassword" class="form-label">password.</label>
         </div>
-        <button type="submit" class="button1-design">sign in.</button>
+        <div class="authButtons">
+          <button type="submit" class="button1-design">sign up.</button>
+          <div class="toggle button2-design">Need to sign in?</div>
+        </div>
       </form>
 
       <form id="sign-in-form-container">
-        <h2>Returning Golfer? Sign In</h2>
+        <h2 class="authHeader">Hello Again. Let's Sign In.</h2>
         <div class="form-floating">
           <input
             type="email"
@@ -99,7 +102,10 @@
             >password.</label
           >
         </div>
-        <button type="submit" class="button1-design">sign in.</button>
+        <div class="authButtons">
+          <button type="submit" class="button1-design">sign in.</button>
+          <div class="toggle button2-design">New User?</div>
+        </div>
       </form>
     </div>
 

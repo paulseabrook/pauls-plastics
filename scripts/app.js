@@ -40,7 +40,7 @@ const createDiscForm = document.querySelector('.create-disc-form')
 const indexDiscsContainer = document.querySelector('.index-disc-container')
 const showDiscContainer = document.querySelector('#show-disc-container')
 const reviewDiscForm = document.querySelector('.review-disc-form')
-
+const toggle = document.querySelectorAll('.toggle')
 // User Actions
 
 // when signing up, prevent the form from refreshing, assign the email and password to userData, call the signup (API call) function on userData, and handle for success or failure
@@ -208,4 +208,18 @@ reviewDiscForm.addEventListener('submit', (event) => {
       })
       .catch(onFailure)
   }, 2000)
+})
+
+// auth page actions
+
+toggle[1].addEventListener('click', () => {
+  console.log('workding')
+  signUpContainer.classList.remove('hide')
+  signInContainer.classList.add('hide')
+})
+
+toggle[0].addEventListener('click', () => {
+  console.log('workding')
+  signInContainer.classList.remove('hide')
+  signUpContainer.classList.add('hide')
 })

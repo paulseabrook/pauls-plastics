@@ -6,7 +6,7 @@ import { store } from './store.js'
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/sign-up
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/sign-up
 export const signUp = (data) => {
-  return fetch(`https://pauls-plastics.fly.dev/sign-up`, {
+  return fetch(`http://localhost:8000/sign-up`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -20,7 +20,7 @@ export const signUp = (data) => {
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/sign-in
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/sign-in
 export const signIn = (data) => {
-  return fetch(`https://pauls-plastics.fly.dev/sign-in`, {
+  return fetch(`http://localhost:8000/sign-in`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -36,7 +36,7 @@ export const signIn = (data) => {
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/discs
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs
 export const indexDisc = () => {
-  return fetch(' https://pauls-plastics.fly.dev/discs', {
+  return fetch('http://localhost:8000/discs', {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -47,7 +47,7 @@ export const indexDisc = () => {
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/discs/${id}
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs/${id}
 export const showDisc = (id) => {
-  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
+  return fetch(`http://localhost:8000/discs/${id}`, {
     headers: {
       Authorization: `Bearer ${store.userToken}`,
     },
@@ -58,7 +58,7 @@ export const showDisc = (id) => {
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/discs
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs
 export const createDisc = (data) => {
-  return fetch(`https://pauls-plastics.fly.dev/discs`, {
+  return fetch(`http://localhost:8000/discs`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -73,7 +73,7 @@ export const createDisc = (data) => {
 // for render deployed app, use:  https://pauls-plastics-server.onrender.com/discs/${id}
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs/${id}
 export const updateDisc = (data, id) => {
-  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
+  return fetch(`http://localhost:8000/discs/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',
@@ -90,7 +90,7 @@ export const updateDisc = (data, id) => {
 // for render deployed app, use:  https://pauls-plastics-server.onrender.com/discs/${id}
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs/${id}
 export const deleteDisc = (id) => {
-  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
+  return fetch(`http://localhost:8000/discs/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${store.userToken}`,
@@ -106,7 +106,7 @@ export const deleteDisc = (id) => {
 // for render deployed app, use: https://pauls-plastics-server.onrender.com/reviews
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/discs
 export const createReview = (data) => {
-  return fetch(`https://pauls-plastics.fly.dev/discs/${id}`, {
+  return fetch(`http://localhost:8000/reviews`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -120,7 +120,7 @@ export const createReview = (data) => {
 // for local dev = http://localhost:8000/reviews/${id}
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/reviews/${id}
 export const updateReview = (data, id) => {
-  return fetch(`https://pauls-plastics.fly.dev/reviews/${id}`, {
+  return fetch(`http://localhost:8000/reviews/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',
@@ -136,7 +136,7 @@ export const updateReview = (data, id) => {
 // for local dev = http://localhost:8000/reviews/${id}
 // for fly.io deployed app, use: https://pauls-plastics.fly.dev/reviews/${id}
 export const deleteReview = (id) => {
-  return fetch(`https://pauls-plastics.fly.dev/reviews/${id}`, {
+  return fetch(`http://localhost:8000/reviews/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${store.userToken}`,

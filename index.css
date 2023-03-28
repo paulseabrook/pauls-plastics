@@ -101,8 +101,20 @@ main {
 .auth-container > * {
   margin: 50px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.719);
+  background-color: rgba(255, 255, 255, 0.901);
   border-radius: 10px;
+}
+
+.authHeader {
+  text-align: center;
+}
+
+#sign-up-form-container {
+  width: 500px;
+}
+
+#sign-in-form-container {
+  width: 500px;
 }
 
 #sign-up-form-container > * {
@@ -111,6 +123,11 @@ main {
 
 #sign-in-form-container > * {
   margin: 10px;
+}
+
+.authButtons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .nav-button {
@@ -175,6 +192,11 @@ main {
 
 .button3-design:hover {
   background-color: rgb(109, 26, 26);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
 }
 
 .message-container {
